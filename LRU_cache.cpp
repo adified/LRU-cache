@@ -24,7 +24,6 @@ public:
 	LRUCache(int maxSize){
 		this->maxSize = maxSize > 1 ? maxSize : 1;
 	}
-
 	void insertKeyValue(string key,int value){
 		//2 cases
 		if(m.count(key)!=0){
