@@ -14,7 +14,6 @@ public:
 	}
 };
 
-
 //LRU Cache Data Structure
 class LRUCache{
 public:
@@ -49,10 +48,8 @@ public:
 	}
 
 	int* getValue(string key){
-			
 		if(m.count(key)!=0){
 			auto it = m[key];
-
 			int value = it->value;
 			l.push_front(*it);
 			l.erase(it);
@@ -60,15 +57,11 @@ public:
 			return &l.begin()->value;
 		}	
 		return NULL;
-
 	}
-
 	string mostRecentKey(){
 		return l.front().key;
 	}
-
 };
-
 
 int main(){
 	LRUCache lru(3);
@@ -85,25 +78,19 @@ int main(){
 		cout<<"Order of Mango "<<*orders <<endl;
 	}
 
-
 	lru.insertKeyValue("banana",20);
 
 	if(lru.getValue("apple")==NULL){
 		cout<<"apple doesn't exist";
 	}
-
 	if(lru.getValue("guava")==NULL){
 		cout<<"guava doesn't exist";
 	}
-
 	if(lru.getValue("banana")==NULL){
 		cout<<"banana doesn't exist";
 	}
 	if(lru.getValue("mango")==NULL){
 		cout<<"mango doesn't exist";
 	}
-
-	
-
 	return 0;
 }	
