@@ -30,8 +30,7 @@ public:
 			//replace the old value and update
 			auto it = m[key];
 			it-> value = value;
-		}
-		else{
+		}else{
 			//check if cache if full or not
 			//remove the least recently used item from cache
 			if(l.size()==maxSize){
@@ -39,7 +38,6 @@ public:
 				m.erase(last.key); //remove from hashmap
 				l.pop_back(); //remove from linked list
 			}
-
 			Node n(key,value);
 			l.push_front(n);
 			m[key] = l.begin();
